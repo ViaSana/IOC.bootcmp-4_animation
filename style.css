@@ -94,6 +94,12 @@ header a{
   position: relative;
 }
 
+.doted-nav a:hover {
+  color: #fff;
+  transition: 2s;
+}
+
+
 .doted-nav a::after{
 content: " ";
 position: absolute;
@@ -102,13 +108,20 @@ left: calc(50% - 4px);
 width: 8px;
 height: 8px;
 border: 1px solid;
-border-radius: 100px;
-background-color: #000;
+border-radius: 100%;
+background-color: #fff;
+transition: 1s;
+z-index: -11;
 }
 
 .doted-nav a:hover::after{
-  background-color: #fff;
+  background-color: #000;
+  bottom: var(--dotbottom);
+  height: var(--dotheight);
+  width: 100%;
+  left: 0;
 }
+
 
 .vertical-text{
   writing-mode:vertical-rl;

@@ -40,7 +40,7 @@ object.addEventListener('mouseleave', toggleSubPoints)
 })
 
 //  first we are finding all of the elements that have a class of scroll-in-from-bottom
-const headings = document.querySelectorAll(".gallery-scroll")
+const headings = document.querySelectorAll(".scroll-in-from-bottom")
 
 // for each of them we are going to attach a gsap animation ( like a jekyll for loop just in js :D )
 headings.forEach(object => {
@@ -61,7 +61,7 @@ headings.forEach(object => {
           markers: true,
       }
     }).from(object,{
-        bottom:-300,
+        x:-200,
         opacity:0
     })
 })
