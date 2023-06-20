@@ -4,21 +4,21 @@ banner: true
 ---
 <!-- 3 col section with info -->
   <section class="">
-    <div class="grid  md:grid-cols-3 gap-10 max-w-screen-2xl mx-auto">
+    <div class="grid gap-10 mx-auto md:grid-cols-3 max-w-screen-2xl">
 
       <!-- used flex here so that the vertical text takes up a small amount of space and leaving the rest for the div with bg image -->
       <div class="flex self-start">
-        <p class="vertical-text px-2">
+        <p class="px-2 vertical-text">
           baro architecture
         </p>
         <div class="grow relative aspect-portrait bg pb-[50%]" style="background-image: url('https://picsum.photos/id/1081/600/400');">
-          <div class="w-5 h-5 navpoint bg-white absolute inline-block rounded-full bottom-8 right-8 pulse-animation">
+          <div class="absolute inline-block w-5 h-5 bg-white rounded-full navpoint pulsing-animation bottom-8 right-8 pulse-animation">
             <div class="right-[1rem] absolute top-0 overflow-hidden w-0 sub-points block whitespace-nowrap">41°24'12.2"N 2°10'26.5"E</div>
           </div> 
         </div>
       </div>
       <!-- col span 2 + coloumns 2 means that on desktop it will evenly break up the content between the 2 columns -->
-      <div class="md:col-span-2 md:columns-2 gap-10">
+      <div class="gap-10 md:col-span-2 md:columns-2">
         <h2 class="mb-0">Barō -</h2>
         <h3 class="mb-8 text-3xl">Beyond the design</h3>
         <p>With a rich history spanning decades, Baro Architecture has become synonymous with architectural excellence and a forward-thinking approach to the built environment.
@@ -36,7 +36,7 @@ banner: true
         </p>
 
         <!-- arrow color is passed with the color variable -->
-        <div class="mt-8 ml-auto w-20">
+        <div class="w-20 mt-8 ml-auto">
           <a href="#" class="block">
             {% include arrow.html color='#000' %}
           </a>
@@ -48,17 +48,17 @@ banner: true
 
   <!-- first property  -->
   <section class="bg-[var(--dark)] text-white">
-    <div class="grid md:grid-cols-2 items-end pb-5p gap-8  max-w-screen-2xl mx-auto">
+    <div class="grid items-end gap-8 mx-auto md:grid-cols-2 pb-5p max-w-screen-2xl">
 
       {% assign sorted = site.property | sort: 'date' %}
       {% for prop in sorted limit:1 %}
       <div class="">
-        <h2 class="w-1 scroll-in-from-bottom relative">{{prop.title}}</h2>
+        <h2 class="relative w-1 scroll-in-from-bottom">{{prop.title}}</h2>
       </div>
       
       <div>
         <h3>Brief</h3>  
-        <div class="md:columns-2 gap-8">
+        <div class="gap-8 md:columns-2">
           <p>{{prop.brief}}</p>
         </div>
       </div>
@@ -67,26 +67,26 @@ banner: true
     <!--  -->
     <div class="min-h-[25vh] relative">
       <img src="{{prop.featured_image}}" alt="building" class="img-overlay">
-      <div class="absolute bg-white top-6 right-6 w-4 h-4 rounded-full pulse-animation">
+      <div class="absolute w-4 h-4 bg-white rounded-full top-6 right-6 pulse-animation">
       </div>
     </div>
-    <div class="flex gap-16 py-8 items-center">
+    <div class="flex items-center gap-16 py-8">
       <div>
         <h3>
           Date
         </h3>
-        <p class="font-light text-sm">{{prop.date | date_to_string}}</p>
+        <p class="text-sm font-light">{{prop.date | date_to_string}}</p>
       </div>
       <div>
         <h3>
           Cotractor
         </h3>
-        <p class="font-light text-sm">{{prop.contractor}}</p>
+        <p class="text-sm font-light">{{prop.contractor}}</p>
       </div>
       <div>
         <h3>Principle Architect
         </h3>
-        <p class="font-light text-sm">{{prop.architect}}</p>
+        <p class="text-sm font-light">{{prop.architect}}</p>
       </div>
       <div class="flex-1"></div>
       <div>
@@ -102,7 +102,7 @@ banner: true
   <!-- first featured property -->
 
   <section class="">
-    <div class="grid md:grid-cols-2 pb-5p md:gap-16 max-w-screen-2xl mx-auto">
+    <div class="grid mx-auto md:grid-cols-2 pb-5p md:gap-16 max-w-screen-2xl">
       {% assign featured = site.property | where:'featured', 'true' %}
       {% for prop in featured limit:1 %}
       <div class="">
@@ -120,16 +120,16 @@ banner: true
             <span class="font-bold">see it</span>
             {% include arrow.html color='#000' %}
           </div>
-          <div class="text-right pt-12">
-            <h3 class="mb-0 mt-4">
+          <div class="pt-12 text-right">
+            <h3 class="mt-4 mb-0">
               Date
             </h3>
             <span class="">{{prop.date | date_to_string}}</span>
-            <h3 class="mb-0 mt-4">
+            <h3 class="mt-4 mb-0">
               Cotractor
             </h3>
             <span class="">{{prop.contractor}}</span>
-            <h3 class="mb-0 mt-4">
+            <h3 class="mt-4 mb-0">
               Principle Architect
             </h3>
             <span class="">{{prop.architect}}</span>
@@ -138,9 +138,9 @@ banner: true
         </div>
         
       </div>
-      <div class="mt-8 md:mt-32 flex items-stretch">
+      <div class="flex items-stretch mt-8 md:mt-32">
         <div class="grow bg-cover bg-center pb-[50%] scroll-in-from-bottom" style="background-image: url('{{prop.featured_image}}');"></div>
-        <p class="vertical-text px-4">Barō Architecture</p>
+        <p class="px-4 vertical-text">Barō Architecture</p>
       </div>
     {% endfor %}
     </div>
@@ -148,9 +148,9 @@ banner: true
 
 
   <section class="bg-[var(--dark)] text-white">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16 max-w-screen-2xl mx-auto">
+    <div class="grid gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3 md:gap-16 max-w-screen-2xl">
         <div class="flex items-start gap-4">
-          <div class="w-16 h-16 bg-white rounded-full hidden sm:block scroll-in-from-left"></div>
+          <div class="hidden w-16 h-16 bg-white rounded-full sm:block scroll-in-from-left"></div>
           <div class="flex-1">
             <h2 class="text-[2rem] scroll-in-from-bottom">
               Beyond the design

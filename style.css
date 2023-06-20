@@ -124,6 +124,39 @@ background-color: #000;
   grid-template-columns: 8rem auto;
 }
 
-/* burger menu */
+.bouncing-animation{
+  animation: bounce 2s ease-out 1s infinite running;
+}
 
+@keyframes bounce {
+  from {
+    translate: 0 0;
+    opacity: 0;
+  }
+  to { 
+    translate: 0 1rem;
+  }
+}
+
+.pulsing-animation{
+  animation: pulse 2s ease-in 1s infinite alternate;
+}
+
+.pulsing-animation:hover{
+  animation-play-state: paused;
+}
+
+.navpoint {
+  border: 2px solid #fff;
+}
+
+@keyframes pulse {
+  from {
+    scale: .9;
+  }
+  to { 
+    scale: 1.2;
+    background-color: #000;
+  }
+}
 

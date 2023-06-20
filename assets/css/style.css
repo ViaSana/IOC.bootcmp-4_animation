@@ -584,9 +584,6 @@ video {
 .min-h-100 {
   min-height: 100vh;
 }
-.min-h-70 {
-  min-height: 70vh;
-}
 .min-h-\[25vh\] {
   min-height: 25vh;
 }
@@ -611,6 +608,9 @@ video {
 .w-6 {
   width: 1.5rem;
 }
+.w-32 {
+  width: 8rem;
+}
 .w-4 {
   width: 1rem;
 }
@@ -622,9 +622,6 @@ video {
 }
 .w-\[150\%\] {
   width: 150%;
-}
-.w-32 {
-  width: 8rem;
 }
 .max-w-screen-2xl {
   max-width: 1536px;
@@ -640,6 +637,9 @@ video {
 }
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+.shrink {
+  flex-shrink: 1;
 }
 .grow {
   flex-grow: 1;
@@ -867,6 +867,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.opacity-0 {
+  opacity: 0;
+}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -983,29 +986,40 @@ background-color: #000;
   grid-template-columns: 8rem auto;
 }
 
-/* burger menu */
-
-
-
-.pulse-animation{
-  /* background-color: aqua; */
-  animation: pulse 1s ease-in-out infinite alternate;
-}
-.pulse-animation:hover{
-  animation-play-state: paused;
-}
 .bouncing-animation{
-  animation: bounce 1s ease-in-out infinite alternate;
+  animation: bounce 2s ease-out 1s infinite running;
 }
 
 @keyframes bounce {
-  from {translate: 0 0;}
-  to { translate: 0 -1rem;}
+  from {
+    translate: 0 0;
+    opacity: 0;
+  }
+  to { 
+    translate: 0 1rem;
+  }
+}
+
+.pulsing-animation{
+  animation: pulse 2s ease-in 1s infinite alternate;
+}
+
+.pulsing-animation:hover{
+  animation-play-state: paused;
+}
+
+.navpoint {
+  border: 2px solid #fff;
 }
 
 @keyframes pulse {
-  from {scale:1;}
-  to { scale: 1.2}
+  from {
+    scale: .9;
+  }
+  to { 
+    scale: 1.2;
+    background-color: #000;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1063,3 +1077,4 @@ background-color: #000;
 .\[\&\>\:nth-child\(2n\)\]\:aspect-\[2\/3\]>:nth-child(2n) {
   aspect-ratio: 2/3;
 }
+
