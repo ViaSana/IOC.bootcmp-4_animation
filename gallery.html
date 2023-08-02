@@ -2,9 +2,8 @@
 layout: default
 ---
 
-
 <section>
-  <div class="pb-5p gap-8 max-w-screen-2xl mx-auto grid scary-grid items-end gap-y-16">
+  <div class="grid items-end gap-8 mx-auto pb-5p max-w-screen-2xl scary-grid gap-y-16">
     {% for prop in site.property-gallery %}
       <a href="{{prop.url}}" class="block w-32">
         <h2 class="vertical-text h-min relative bottom-[-24px]">{{prop.title}}</h2>
@@ -12,20 +11,13 @@ layout: default
           <div class='max-w-[5rem]'>
             {% include arrow.html color='#000' %}
           </div>
-          <div class="w-4 h-4 flex-shrink-0 ml-4 bg-black inline-block rounded-full bottom-8 right-8"></div> 
+          <div class="flex-shrink-0 inline-block w-4 h-4 ml-4 bg-black rounded-full bottom-8 right-8"></div> 
         </div>
       </a>
       <div class="flex items-center h-full">
-        <a href="{{prop.url}}" class="aspect-landscape-wide relative gallery-scroll block grow" style="scale: .5;">
+        <a href="{{prop.url}}" class="relative block aspect-landscape-wide gallery-scroll grow" style="scale: .5;">
           <img src="{{prop.featured_image}}" alt="building" class="img-overlay">
         </a>
       </div>
-
     {% endfor %}
-  </section>
-  
-
-  <script>
-   
-  </script>
-
+</section>

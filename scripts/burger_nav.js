@@ -12,7 +12,7 @@ tl.pause();
 
 // then we start righting our new function
 function toggleBurgerMenu() {
-  
+
   // here we check to see if the burger button has the class of active
     if (burgerButton.classList.contains("active")){
         // more consle.log for testing
@@ -20,7 +20,7 @@ function toggleBurgerMenu() {
         
         // remove the class of active
         burgerButton.classList.remove("active")
- 
+
         tl.reverse()
 
     } else {

@@ -1087,7 +1087,7 @@ z-index: -11;
   }
   .md\:columns-2 {
     -moz-columns: 2;
-         columns: 2;
+    columns: 2;
   }
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
